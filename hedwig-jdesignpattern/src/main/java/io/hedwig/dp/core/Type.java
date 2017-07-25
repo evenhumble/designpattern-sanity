@@ -1,0 +1,5 @@
+package io.hedwig.dp.core;
+
+public enum Type {
+  CREATIONAL, STRUCTURAL, BEHAVIORAL, USER_INTERFACE, MESSAGING, ENTERPRISE
+}
