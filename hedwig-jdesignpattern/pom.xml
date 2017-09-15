@@ -4,12 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>hedwig.io</groupId>
+    <groupId>io.hedwig</groupId>
     <artifactId>hedwig-jdesignpattern</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
 
-    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.buid.resourceEncoding>UTF-8</project.buid.resourceEncoding>
@@ -41,15 +40,13 @@
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
         <skip.integration.tests>false</skip.integration.tests>
         <skip.unit.tests>false</skip.unit.tests>
-
-
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <version>22.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
