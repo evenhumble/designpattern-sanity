@@ -11,9 +11,13 @@ import java.lang.annotation.*;
 @Documented
 @Inherited
 public @interface DP {
+
   Source source() default Source.GoF;
+
   DPCategory type();
+
   String[] urls() default {};
+
   Refactoring[] refactorings() default {};
 
   Class[] related() default {};
