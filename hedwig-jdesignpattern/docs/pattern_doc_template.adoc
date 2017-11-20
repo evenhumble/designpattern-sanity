@@ -1,0 +1,8 @@
+= INDEX- pattern_name Pattern
+
+== INDEX.1 关于patternname_cn的一个示意图
+
+image::pattern_name.png[]
+
+== INDEX.2 patternname_cn的实现
+

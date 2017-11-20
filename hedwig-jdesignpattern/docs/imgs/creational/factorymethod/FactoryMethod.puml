@@ -1,0 +1,42 @@
+@startuml
+
+interface Logger
+interface LoggerFactory
+
+Logger <|--- FileLogger
+Logger <|--- DataBaseLogger
+LoggerFactory <|--- FileLoggerFactory
+LoggerFactory <|--- DataBaseLoggerFactory
+Loggers ... LoggerFactory
+Loggers ... Logger
+
+interface Logger {
+  + void writeLog();
+}
+
+interface LoggerFactory {
+  + Logger createLogger();
+}
+
+class FileLogger {
+  + void writeLog();
+  - void initFileLog();
+}
+
+class DataBaseLogger {
+  + void writeLog();
+  - void initDataBaseLogger();
+}
+
+class FileLoggerFactory {
+  + Logger createLogger();
+}
+
+class DataBaseLoggerFactory {
+  + Logger createLogger();
+}
+
+class Loggers{
+    + createLogger(String loggerType)
+}
+@enduml

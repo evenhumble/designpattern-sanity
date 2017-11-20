@@ -11,7 +11,7 @@ package io.hedwig.dp.creational.factorymethod;
  the "Dependency Inversion Principle" a.k.a
  the "D" in S.O.L.I.D principles.
 
- It means the FactoryMethod class depends on abstractions, not concrete classes. This is the real trick compared to SimpleFactory or StaticFactory.
+ It means the Factory-Method.png class depends on abstractions, not concrete classes. This is the real trick compared to SimpleFactory or StaticFactory.
  * @version $Id$
  */
 
