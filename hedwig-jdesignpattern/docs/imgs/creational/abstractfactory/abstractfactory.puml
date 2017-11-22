@@ -1,0 +1,49 @@
+@startuml
+
+interface Button{
+   + void display()
+}
+
+interface TextField{
+   + void display()
+}
+
+interface ComboBox{
+    + void display()
+}
+
+YellowButton--> Button
+BlueButton --> Button
+RedButton --> Button
+YellowTextField --> TextField
+BlueTextField --> TextField
+RedTextField --> TextField
+
+YellowComboBox --> ComboBox
+BlueComboBox --> ComboBox
+RedComboBox --> ComboBox
+
+interface SkinFactory{
+    + Button createButton()
+    + TextField createTextField()
+    + ComboBox createComboBox()
+}
+
+class GSkinFactory{
+    + Button createButton()
+    + TextField createTextField()
+    + createComboBox createComboBox()
+}
+
+class OSkinFactory{
+    + Button createButton()
+    + TextField createTextField()
+    + createComboBox createComboBox()
+}
+class FSkinFactory{
+    + Button createButton()
+    + TextField createTextField()
+    + createComboBox createComboBox()
+}
+
+@enduml
