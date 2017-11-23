@@ -1,0 +1,97 @@
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public interface Component {
+  public default void operation(){
+    System.out.println("default component method!");
+  }
+}
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public class ComponentA implements Component {
+
+  @Override
+  public void operation() {
+    System.out.println("Component A ");
+  }
+}
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public abstract class Decorator {
+  private Component component;
+  public abstract void operation();
+
+  public Component getComponent() {
+    return component;
+  }
+
+  public void setComponent(Component component) {
+    this.component = component;
+  }
+}
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public class DecoratorA extends Decorator{
+
+  @Override
+  public void operation() {
+    before();
+    super.getComponent().operation();
+    System.out.println("this is DecoratorA");
+  }
+
+  private void before(){
+    System.out.println("this is before!");
+  }
+}
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public class DecoratorB extends Decorator{
+
+  @Override
+  public void operation() {
+
+    super.getComponent().operation();
+    System.out.println("this is DecoratorB");
+    after();
+  }
+
+  private void after(){
+    System.out.println("this is after!");
+  }
+}
+package io.hedwig.dp.demos.structural.decorator;
+
+/**
+ * 1. author: patrick
+ */
+public class DecoratorClient {
+
+  public static void main(String[] args) {
+    Component c = new ComponentA();
+    Decorator d = new DecoratorA();
+    d.setComponent(c);
+    d.operation();
+  }
+
+}
+Component.java
+ComponentA.java
+Decorator.java
+DecoratorA.java
+DecoratorB.java
+DecoratorClient.java

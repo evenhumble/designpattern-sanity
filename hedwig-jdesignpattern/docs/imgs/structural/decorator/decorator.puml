@@ -1,0 +1,32 @@
+@startuml
+
+
+interface Component {
+   + operation()
+}
+class ComponentA {
+   + operation()
+}
+ComponentA -->Component
+class Decorator {
+  - Component component;
+  +operation();
+
+}
+class DecoratorA {
++operation();
+
+}
+class DecoratorB {
++operation();
+
+}
+Component *--> Decorator
+Decorator <-- DecoratorA
+Decorator <-- DecoratorB
+
+class DecoratorClient {
+
+}
+DecoratorClient -> Decorator
+@enduml

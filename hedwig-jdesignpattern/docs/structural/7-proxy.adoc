@@ -1,0 +1,8 @@
+= 7- proxy Pattern
+
+== 7.1 关于代理的一个示意图
+
+image::proxy.png[]
+
+== 7.2 代理的实现
+

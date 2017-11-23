@@ -1,0 +1,30 @@
+@startuml
+
+abstract class AbstractOperation {
+    + operation()
+}
+note left: impl.operationImpl()
+
+class EnhanceOperation {
+    + operation()
+}
+
+EnhanceOperation --> AbstractOperation
+
+interface Implementor {
+    + operationImpl()
+}
+Implementor <---* AbstractOperation
+
+class AImplementor {
+    + operationImpl()
+}
+
+class BImplementor {
+    + operationImpl()
+}
+
+AImplementor ..> Implementor
+BImplementor ..> Implementor
+
+@enduml
