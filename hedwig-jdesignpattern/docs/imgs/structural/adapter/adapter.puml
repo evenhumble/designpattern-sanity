@@ -1,0 +1,21 @@
+@startuml
+
+class Adapter{
+   + request()
+}
+
+class Adaptee{
+   + specialRequest()
+}
+
+class Target{
+   + request(): request
+}
+
+Client...>Target
+
+Target <-- Adapter
+note right: Adapter request() invoke adaptee.specailRequest()
+
+@enduml
+
