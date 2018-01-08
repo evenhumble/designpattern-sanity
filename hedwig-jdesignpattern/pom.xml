@@ -12,6 +12,7 @@
         <module>dp-core</module>
         <module>dp-simple</module>
         <module>dp-demos</module>
+        <module>dp-advanced</module>
     </modules>
 
     <properties>
