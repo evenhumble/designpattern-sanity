@@ -1,0 +1,25 @@
+@startuml
+
+class Leaf{
+   + operation()
+}
+
+class Component {
+    + operation()
+    + add(Component c)
+    + remove(Component c)
+    + getChild(int index)
+}
+class Composite{
+    + operation()
+    + add(Component c)
+    + remove(Component c)
+    + getChild(int index)
+}
+
+Component <-- Composite
+Component <-- Leaf
+Composite *--->Component
+
+client ..> Component
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+
+interface Product {
+ + void make()
+}
+
+
+Product <|-- BlueProduct
+Product <|-- RedProduct
+Product <|-- YelloProduct
+
+
+class SimpleProductFactory{
++ Product create(String productName)
+}
+
+SimpleProductFactory --> Product
+
+@enduml

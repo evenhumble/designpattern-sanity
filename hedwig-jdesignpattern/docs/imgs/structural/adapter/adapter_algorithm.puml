@@ -1,0 +1,36 @@
+@startuml
+
+class RankingOperation{
+   + sort(int[]source)
+   + perSort(int[] source)
+}
+
+class RankingOperationAdapter{
+   - sortAlgorithm
+   - preSortAlgorithm
+   + sort(int[] source)
+   + preSort(int[] source)
+}
+
+class QuickSort{
+   + sort(int[] source)
+   - swap()
+   - partition()
+}
+
+class PreSortAlgorithm{
+   + preSort(int[] source)
+   - swap()
+   - partition()
+ }
+
+client ...>RankingOperation
+RankingOperationAdapter ...>RankingOperation
+
+RankingOperationAdapter *--->QuickSort
+note left: sort invoke RankingOperationAdapter.sort()
+RankingOperationAdapter *--->PreSortAlgorithm
+note right: preSort() invoke RankingOperationAdapter.preSort()
+
+@enduml
+

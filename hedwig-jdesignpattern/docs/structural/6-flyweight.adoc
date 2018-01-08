@@ -1,0 +1,10 @@
+= 6- flyweight Pattern
+
+享元模式可以共享类似的meta data或者享元类来减少开销。
+
+== 6.1 关于享元的一个示意图
+
+image::flyweight.png[]
+
+== 6.2 享元的实现
+

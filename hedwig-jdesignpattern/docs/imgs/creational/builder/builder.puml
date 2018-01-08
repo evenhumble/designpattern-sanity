@@ -1,0 +1,23 @@
+@startuml
+
+class HeroCharacter{
+- name
+- Weapon
+
+}
+
+class Builder{
+   + Builder name(String name)
+   + Builder withWeapon(Weapon weapon)
+   + HeroCharacter build()
+   }
+
+class Weapon{
+ - name
+ - powerLevel
+}
+
+Builder --* HeroCharacter
+Weapon --* HeroCharacter
+
+@enduml

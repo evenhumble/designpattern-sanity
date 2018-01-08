@@ -1,0 +1,10 @@
+@startuml
+
+class SingletonClient{
+ - SingletonClient instance
+ + static SingletonClient getInstance()
+}
+
+instance o-- SingletonClient
+
+@enduml

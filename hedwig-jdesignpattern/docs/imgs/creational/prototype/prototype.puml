@@ -1,0 +1,18 @@
+@startuml
+
+interface Cloneable{
+    + Object clone()
+}
+interface Serializable
+
+class DailyReport{
+    - name: String
+    - date: String
+    - content: String
+    + DailyReport clone()
+}
+
+DailyReport --> Cloneable
+DailyReport --> Serializable
+
+@enduml

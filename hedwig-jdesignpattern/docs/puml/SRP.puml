@@ -1,0 +1,21 @@
+@startuml
+
+class AllInOne{
++ Connection getConnection()
++ Object findOne()
++ void generateMonthlyReport()
++ void showReport()
+}
+
+class DAO{
+   + Connection getConnection()
+   + Object findOne()
+}
+
+class Reporter{
+DAO dao
++ void generateMonthlyReport()
++ void showReport()
+}
+
+@enduml

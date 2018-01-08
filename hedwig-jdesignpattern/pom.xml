@@ -8,6 +8,12 @@
     <artifactId>hedwig-jdesignpattern</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
+    <modules>
+        <module>dp-core</module>
+        <module>dp-simple</module>
+        <module>dp-demos</module>
+        <module>dp-advanced</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
