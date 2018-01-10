@@ -1,0 +1,8 @@
+= 1- balking Pattern
+
+== 1.1 关于balking的一个示意图
+
+image::balking.png[]
+
+== 1.2 balking的实现
+
