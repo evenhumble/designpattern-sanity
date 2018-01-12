@@ -1,4 +1,6 @@
-= 1- balking Pattern
+= 1- Balking Pattern
+
+Balking Pattern is used to prevent an object from changing status if it is an inappropriate state
 
 == 1.1 关于balking的一个示意图
 

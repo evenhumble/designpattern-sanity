@@ -1,8 +1,0 @@
-= 3- abstract factory Pattern
-
-== 3.1 关于抽象工厂的一个示意图
-
-image::abstract factory.png[]
-
-== 3.2 抽象工厂的实现
-

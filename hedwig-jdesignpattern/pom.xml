@@ -46,6 +46,29 @@
         <sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
         <skip.integration.tests>false</skip.integration.tests>
         <skip.unit.tests>false</skip.unit.tests>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <hibernate.version>5.0.1.Final</hibernate.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
+        <spring-boot.version>1.5.7.RELEASE</spring-boot.version>
+        <spring-data.version>1.9.2.RELEASE</spring-data.version>
+        <h2.version>1.4.190</h2.version>
+        <junit.version>4.12</junit.version>
+        <junit-jupiter.version>5.0.2</junit-jupiter.version>
+        <junit-vintage.version>${junit.version}.2</junit-vintage.version>
+        <junit-platform.version>1.0.2</junit-platform.version>
+        <sping-test-junit5.version>1.0.2</sping-test-junit5.version>
+        <compiler.version>3.0</compiler.version>
+        <jacoco.version>0.7.2.201409121644</jacoco.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <camel.version>2.16.1</camel.version>
+        <guava.version>19.0</guava.version>
+        <mockito.version>1.10.19</mockito.version>
+        <apache-httpcomponents.version>4.5.2</apache-httpcomponents.version>
+        <htmlunit.version>2.22</htmlunit.version>
+        <guice.version>4.0</guice.version>
+        <mongo-java-driver.version>3.3.0</mongo-java-driver.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <logback.version>1.1.7</logback.version>
     </properties>
 
     <dependencies>
@@ -281,61 +304,217 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <!--<build>-->
+    <!--<plugins>-->
+    <!--&lt;!&ndash; Compilation &ndash;&gt;-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-compiler-plugin</artifactId>-->
+    <!--<version>3.2</version>-->
+    <!--<configuration>-->
+    <!--<source>${compile.version}</source>-->
+    <!--<target>${compile.version}</target>-->
+    <!--<encoding>utf-8</encoding>-->
+    <!--</configuration>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--<groupId>org.apache.maven.plugins</groupId>-->
+    <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+    <!--<version>2.10.3</version>-->
+    <!--<configuration>-->
+    <!--<additionalparam>-Xdoclint:none</additionalparam>-->
+    <!--<failOnError>false</failOnError>-->
+    <!--&lt;!&ndash;<aggregate>true</aggregate>&ndash;&gt;-->
+    <!--&lt;!&ndash;<reportOutputDirectory>../myoutput</reportOutputDirectory>&ndash;&gt;-->
+    <!--&lt;!&ndash;<destDir>myapidocs</destDir>&ndash;&gt;-->
+    <!--</configuration>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<id>attach-javadocs</id>-->
+    <!--<phase>deploy</phase>-->
+    <!--<goals><goal>jar</goal></goals>-->
+    <!--</execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--<artifactId>maven-source-plugin</artifactId>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<id>attach-sources</id>-->
+    <!--<phase>deploy</phase>-->
+    <!--<goals><goal>jar-no-fork</goal></goals></execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--<plugin>-->
+    <!--&lt;!&ndash; explicitly define maven-deploy-plugin after other to force exec-->
+    <!--order &ndash;&gt;-->
+    <!--<artifactId>maven-deploy-plugin</artifactId>-->
+    <!--<executions>-->
+    <!--<execution>-->
+    <!--<id>deploy</id>-->
+    <!--<phase>deploy</phase>-->
+    <!--<goals>-->
+    <!--<goal>deploy</goal>-->
+    <!--</goals>-->
+    <!--</execution>-->
+    <!--</executions>-->
+    <!--</plugin>-->
+    <!--</plugins>-->
+    <!--</build>-->
     <build>
+        <pluginManagement>
+            <plugins>
+                <!-- This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. TODO: Remove when the
+                    m2e plugin can correctly bind to Maven lifecycle -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.jacoco</groupId>
+                                        <artifactId>
+                                            jacoco-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [0.6.2,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>prepare-agent</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
-            <!-- Compilation -->
+            <!-- Tell maven to compile using Java 8 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>${compiler.version}</version>
                 <configuration>
-                    <source>${compile.version}</source>
-                    <target>${compile.version}</target>
-                    <encoding>utf-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                    <failOnError>false</failOnError>
-                    <!--<aggregate>true</aggregate>-->
-                    <!--<reportOutputDirectory>../myoutput</reportOutputDirectory>-->
-                    <!--<destDir>myapidocs</destDir>-->
-                </configuration>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
                 <executions>
                     <execution>
-                        <id>attach-javadocs</id>
-                        <phase>deploy</phase>
-                        <goals><goal>jar</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-source-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <phase>deploy</phase>
-                        <goals><goal>jar-no-fork</goal></goals></execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- explicitly define maven-deploy-plugin after other to force exec
-                    order -->
-                <artifactId>maven-deploy-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>deploy</id>
-                        <phase>deploy</phase>
+                        <id>prepare-agent</id>
                         <goals>
-                            <goal>deploy</goal>
+                            <goal>prepare-agent</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+
+            <!--checkstyle plug-in. checking against googles styles
+               see config at checkstyle.xml
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.17</version>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <configLocation>checkstyle.xml</configLocation>
+                            <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
+                            <encoding>UTF-8</encoding>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>true</failsOnError>
+                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>2.18.1</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <argLine>-Xmx1024M ${argLine}</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+                <configuration>
+                    <failOnViolation>true</failOnViolation>
+                    <failurePriority>5</failurePriority>
+                    <printFailingErrors>true</printFailingErrors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <excludeFromFailureFile>exclude-pmd.properties</excludeFromFailureFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--<plugin>-->
+            <!--<groupId>com.mycila</groupId>-->
+            <!--<artifactId>license-maven-plugin</artifactId>-->
+            <!--<version>2.11</version>-->
+            <!--<configuration>-->
+            <!--<header>com/mycila/maven/plugin/license/templates/MIT.txt</header>-->
+            <!--<properties>-->
+            <!--<owner>Ilkka Seppälä</owner>-->
+            <!--</properties>-->
+            <!--<skipExistingHeaders>true</skipExistingHeaders>-->
+            <!--</configuration>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>install-format</id>-->
+            <!--<phase>install</phase>-->
+            <!--<goals>-->
+            <!--<goal>format</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>

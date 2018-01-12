@@ -1,0 +1,17 @@
+@startuml
+
+class WashMachine {
+   + void powerOff()
+   + void wash()
+   + void stop()
+}
+
+enum WashMatchingState{
+WASHING
+STANDBY
+POWEROFF
+}
+
+WashMachine -> WashMatchingState
+
+@enduml
