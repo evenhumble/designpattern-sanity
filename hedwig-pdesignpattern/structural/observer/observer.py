@@ -1,4 +1,3 @@
-__author__ = 'patrick'
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -6,7 +5,6 @@ __author__ = 'patrick'
 
 
 class Subject(object):
-
     def __init__(self):
         self._observers = []
 
@@ -28,7 +26,6 @@ class Subject(object):
 
 # Example usage
 class Data(Subject):
-
     def __init__(self, name=''):
         Subject.__init__(self)
         self.name = name
@@ -45,14 +42,12 @@ class Data(Subject):
 
 
 class HexViewer:
-
     def update(self, subject):
         print('HexViewer: Subject %s has data 0x%x' %
               (subject.name, subject.data))
 
 
 class DecimalViewer:
-
     def update(self, subject):
         print('DecimalViewer: Subject %s has data %d' %
               (subject.name, subject.data))

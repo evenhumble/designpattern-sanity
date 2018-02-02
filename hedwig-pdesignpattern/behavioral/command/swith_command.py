@@ -60,3 +60,33 @@ class OffCommand(Command):
 
     def exec(self):
         self.__light.turn_off()
+
+
+class LightSwitch:
+    """
+    The client class
+    """
+
+    def __init__(self):
+        self.__lamp = Light()
+        self.__on = OnCommand(self.__lamp)
+        self.__off = OffCommand(self.__lamp)
+        self.__switch = Swith(self.__on, self.__off)
+
+    def switch(self, cmd):
+        cmd = cmd.strip().upper()
+        try:
+            if cmd == "ON":
+                self.__switch.on()
+            elif cmd == "OFF":
+                self.__switch.off()
+            else:
+                print("Wrong Argument!!")
+        except Exception as e:
+            print("Exception occurred: %s" % e)
+
+
+if __name__ == '__main__':
+    light_switch = LightSwitch()
+    light_switch.switch("ON")
+    light_switch.switch("OFF")
