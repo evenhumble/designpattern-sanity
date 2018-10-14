@@ -38,15 +38,29 @@ class Subscribe:
     def __init__(self):
         pass
 
-    def notify(self):
+    def notify(self, post_name):
         pass
 
 
 class User1(Subscribe):
-    def notify(self):
+    def notify(self, post_name):
+        print(post_name)
         print("this is User 1")
 
 
 class User2(Subscribe):
-    def notify(self):
+    def notify(self, post_name):
+        print(post_name)
         print("this is User 2")
+
+
+if __name__ == '__main__':
+    tech_forum = TechForum()
+    user1 = User1()
+    user2 = User2()
+    tech_forum.register(user1)
+    tech_forum.register(user2)
+    tech_forum.write_new_post("Observer pattern in Python")
+
+    tech_forum.unregister(user2)
+    tech_forum.write_new_post("Unregister User2")

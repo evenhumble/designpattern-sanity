@@ -79,7 +79,9 @@ class DB:
 
 
 class TestManager:
-
+    """
+    mediator class to process
+    """
     def __init__(self):
         self._reporter = None
         self._db = None

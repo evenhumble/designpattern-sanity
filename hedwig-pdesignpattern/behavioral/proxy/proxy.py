@@ -1,11 +1,19 @@
 __author__ = 'patrick'
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import time
 
 
-class SalesManager:
+class Manager(object):
+    def work(self):
+        pass
+
+    def talk(self):
+        pass
+
+
+class SalesManager(Manager):
     def work(self):
         print("Sales Manager working...")
 
@@ -13,7 +21,7 @@ class SalesManager:
         print("Sales Manager ready to talk")
 
 
-class Proxy:
+class Proxy(Manager):
     def __init__(self):
         self.busy = 'No'
         self.sales = None
