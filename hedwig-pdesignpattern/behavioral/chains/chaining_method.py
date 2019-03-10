@@ -26,4 +26,4 @@ class Action(object):
 if __name__ == '__main__':
     move = Action('move')
     person=Person('Jack',move)
-    person.do_action().amount('5m').stop
+    person.do_action().amount('5m').stop()
