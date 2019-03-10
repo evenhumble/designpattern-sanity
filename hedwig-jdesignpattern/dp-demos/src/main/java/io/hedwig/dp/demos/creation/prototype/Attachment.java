@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 public class Attachment implements Serializable {
   private String name="init";
-  private String content="for deepcopy";
+  private String content="for deep copy";
 
   public String getName() {
     return name;

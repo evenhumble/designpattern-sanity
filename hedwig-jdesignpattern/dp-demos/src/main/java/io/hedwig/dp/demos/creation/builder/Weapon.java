@@ -9,6 +9,4 @@ import lombok.Data;
 public class Weapon {
   private String name;
   private int powerLevel;
-
-
 }

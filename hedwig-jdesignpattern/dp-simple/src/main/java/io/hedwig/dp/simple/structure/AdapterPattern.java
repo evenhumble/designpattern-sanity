@@ -2,8 +2,8 @@ package io.hedwig.dp.simple.structure;
 
 import java.lang.annotation.*;
 
-import io.hedwig.dp.core.DP;
-import io.hedwig.dp.core.DPCategory;
+import io.hedwig.dp.simple.core.DP;
+import io.hedwig.dp.simple.core.DPCategory;
 
 /**
  * <b>Intent [GoF, pg 139]:</b> Convert the interface of a class into another

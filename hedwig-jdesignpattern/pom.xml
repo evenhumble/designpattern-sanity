@@ -9,7 +9,6 @@
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
     <modules>
-        <module>dp-core</module>
         <module>dp-simple</module>
         <module>dp-demos</module>
         <module>dp-advanced</module>

@@ -3,10 +3,10 @@ package io.hedwig.dp.simple.behavior;
 
 import java.lang.annotation.*;
 
-import io.hedwig.dp.core.DP;
-import io.hedwig.dp.core.DPCategory;
-import io.hedwig.dp.core.Refactoring;
-import io.hedwig.dp.core.Source;
+import io.hedwig.dp.simple.core.DP;
+import io.hedwig.dp.simple.core.DPCategory;
+import io.hedwig.dp.simple.core.Refactoring;
+import io.hedwig.dp.simple.core.Source;
 import io.hedwig.dp.simple.creations.PrototypePattern;
 import io.hedwig.dp.simple.structure.CompositePattern;
 

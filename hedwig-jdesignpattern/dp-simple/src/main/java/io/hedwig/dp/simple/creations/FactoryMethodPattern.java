@@ -1,8 +1,8 @@
 package io.hedwig.dp.simple.creations;
 
 
-import io.hedwig.dp.core.DP;
-import io.hedwig.dp.core.DPCategory;
+import io.hedwig.dp.simple.core.DP;
+import io.hedwig.dp.simple.core.DPCategory;
 
 import java.lang.annotation.*;
 

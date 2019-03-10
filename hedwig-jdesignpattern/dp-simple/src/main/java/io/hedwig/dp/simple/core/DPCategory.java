@@ -1,4 +1,4 @@
-package io.hedwig.dp.core;
+package io.hedwig.dp.simple.core;
 
 public enum DPCategory {
   CREATIONAL, STRUCTURAL, BEHAVIORAL, USER_INTERFACE, MESSAGING, ENTERPRISE

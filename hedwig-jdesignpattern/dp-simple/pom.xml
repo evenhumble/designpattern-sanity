@@ -11,13 +11,4 @@
 
     <artifactId>dp-simple</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>io.hedwig</groupId>
-            <artifactId>dp-core</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
-
 </project>

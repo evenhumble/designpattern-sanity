@@ -2,8 +2,8 @@ package io.hedwig.dp.simple.creations;
 
 import java.lang.annotation.*;
 
-import io.hedwig.dp.core.DP;
-import io.hedwig.dp.core.DPCategory;
+import io.hedwig.dp.simple.core.DP;
+import io.hedwig.dp.simple.core.DPCategory;
 import io.hedwig.dp.simple.behavior.StrategyPattern;
 
 /**

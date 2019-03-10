@@ -9,24 +9,23 @@ import java.io.Serializable;
 /**
  * 1. author: patrick
  */
-public class DailyReporter implements Cloneable,Serializable {
+public class DailyReporter implements Cloneable, Serializable {
+
   private String name;
   private String date;
   private String content;
   private Attachment attachment = new Attachment();
 
   /**
-   *这个是浅拷贝，不会拷贝attachment
-   * @return
-   * @throws CloneNotSupportedException
+   * 这个是浅拷贝，不会拷贝attachment
    */
   @Override
   protected DailyReporter clone() throws CloneNotSupportedException {
     DailyReporter o = null;
-    try{
-      o=(DailyReporter)super.clone();
-    }catch (CloneNotSupportedException e){
-      System.out.println("Can't Clone for class "+this.getClass().getCanonicalName());
+    try {
+      o = (DailyReporter) super.clone();
+    } catch (CloneNotSupportedException e) {
+      System.out.println("Can't Clone for class " + this.getClass().getCanonicalName());
     }
     return o;
 
@@ -34,17 +33,15 @@ public class DailyReporter implements Cloneable,Serializable {
 
   /**
    * need to be Serializable
-   * @return
-   * @throws Exception
    */
-  public DailyReporter deepclone() throws Exception{
+  public DailyReporter deepclone() throws Exception {
 
-    ByteArrayOutputStream bao=new ByteArrayOutputStream();
+    ByteArrayOutputStream bao = new ByteArrayOutputStream();
     ObjectOutputStream oos = new ObjectOutputStream(bao);
     oos.writeObject(this);
     ByteArrayInputStream bai = new ByteArrayInputStream(bao.toByteArray());
-    ObjectInputStream osi=new ObjectInputStream(bai);
-    return (DailyReporter)osi.readObject();
+    ObjectInputStream osi = new ObjectInputStream(bai);
+    return (DailyReporter) osi.readObject();
   }
 
   public String getName() {
