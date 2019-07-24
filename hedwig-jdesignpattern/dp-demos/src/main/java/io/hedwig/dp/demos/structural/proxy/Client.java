@@ -12,15 +12,15 @@ public class Client {
     handler = new DynamicProxy(new RealSubjectA());
     subject =
         (AbstractSubject) Proxy.newProxyInstance(AbstractSubject.class.getClassLoader(),
-                                                 new Class[]{AbstractSubject.class}, handler);
+                                                 new Class[]{AbstractSubject.class},
+                                                 handler);
     subject.request();
-
     System.out.println("------------------------------");
-
     handler = new DynamicProxy(new RealSubjectB());
     subject =
         (AbstractSubject) Proxy.newProxyInstance(AbstractSubject.class.getClassLoader(),
-                                                 new Class[]{AbstractSubject.class}, handler);
+                                                 new Class[]{AbstractSubject.class},
+                                                 handler);
     subject.request();
   }
 }
