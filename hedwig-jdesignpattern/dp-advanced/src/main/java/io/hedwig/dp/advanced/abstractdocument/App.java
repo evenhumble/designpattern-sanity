@@ -46,6 +46,10 @@ public class App {
                       p.getModel().get(), p.getPrice().get()));
   }
 
+  /**
+   * for how to build a tree documentation
+   * @param args
+   */
   public static void main(String[] args) {
     new App();
   }
