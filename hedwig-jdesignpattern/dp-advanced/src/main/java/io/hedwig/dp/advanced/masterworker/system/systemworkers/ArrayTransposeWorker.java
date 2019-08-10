@@ -23,9 +23,9 @@
 
 package io.hedwig.dp.advanced.masterworker.system.systemworkers;
 
-import com.iluwatar.masterworker.ArrayInput;
-import com.iluwatar.masterworker.ArrayResult;
-import com.iluwatar.masterworker.system.systemmaster.Master;
+
+import io.hedwig.dp.advanced.masterworker.ArrayResult;
+import io.hedwig.dp.advanced.masterworker.system.systemmaster.Master;
 
 /**
  *Class ArrayTransposeWorker extends abstract class {@link Worker} and defines method
