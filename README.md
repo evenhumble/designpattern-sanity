@@ -4,9 +4,9 @@ A Repo for learning Design Pattern and Enterprise Aoplication Pattern, it is not
 
 ## To Do Items
 
-- [] JAVA Design Pattern
-- [] Python Design Pattern
-- [] Others
+- [X] JAVA Design Pattern
+- [X] Python Design Pattern
+
 
 ## Docs for different patterns 
 [docs](/docs)
